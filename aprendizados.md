@@ -2,6 +2,7 @@ npm create vite@latest
 npm i tailwindcss postcss autoprefixer -D
 npx tailwindcss init -p
 npm i phosphor-react
+npm i date-fns
 
 # GraphCMS
 
@@ -132,3 +133,7 @@ Três valores: flex-grow | flex-shrink | flex-basis
 # font smoothing
  Smooth the font on the level of the pixel, as opposed to the subpixel. Switching from subpixel rendering to antialiasing for light text on dark backgrounds makes it look lighter.
 `--webkit-font-smoothing: antialiased`
+
+# Data
+ const isLessonAvailable = isPast(props.availableAt)
+   const availableDateFormatted = format(props.availableAt, "EEEE' • 'd' de 'MMMM' • 'k'h'mm", {locale: ptBR})

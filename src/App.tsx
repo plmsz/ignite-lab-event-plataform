@@ -22,11 +22,6 @@ function App() {
     <div>
       <Event />
     </div>
-    // <ul>
-    //   {data?.lessons.map((lesson) => {
-    //     return <li key={lesson.id}>{lesson.title}</li>;
-    //   })}
-    // </ul>
   );
 }
 
