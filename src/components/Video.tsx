@@ -37,29 +37,32 @@ interface GetLessonBySlugResponse {
 }
 
 interface VideoProps {
-    lessonSlug: string;
+  lessonSlug: string;
 }
 
 export function Video(props: VideoProps) {
-  const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSONS_BY_SLUG_QUERY, {
-    variables: {
-      slug: props.lessonSlug,
-    },
-  });
-console.log(data)
-  if(!data){
+  const { data } = useQuery<GetLessonBySlugResponse>(
+    GET_LESSONS_BY_SLUG_QUERY,
+    {
+      variables: {
+        slug: props.lessonSlug,
+      },
+    }
+  );
+  console.log(data);
+  if (!data) {
     return (
-        <div className="flex-1">
-            <h1>Carregando...</h1>
-        </div>
-    )
+      <div className='flex-1'>
+        <h1>Carregando...</h1>
+      </div>
+    );
   }
   return (
     <div className='flex-1'>
       <div className='bg-black flex justify-center'>
         <div className='h-full w-full max-w-[1100px] max-h-[60vh] aspect-video'>
           <Player>
-            <Youtube videoId={data.lesson.videoId} key={data.lesson.videoId}/>
+            <Youtube videoId={data.lesson.videoId} key={data.lesson.videoId} />
             <DefaultUi />
           </Player>
         </div>
@@ -83,7 +86,9 @@ console.log(data)
                 <strong className='text-2xl text-gray-100 block'>
                   {data.lesson.teacher.name}
                 </strong>
-                <span className='text-sm text-gray-300 block'>{data.lesson.teacher.bio}</span>
+                <span className='text-sm text-gray-300 block'>
+                  {data.lesson.teacher.bio}
+                </span>
               </div>
             </div>
           </div>
@@ -127,7 +132,7 @@ console.log(data)
             className='flex items-center bg-gray-700 rounded overflow-hidden flex items-strech gap-6 hover:bg-gray-600 transition-colors'
           >
             <div className='bg-green-500 h-full p-6 flex items-center'>
-              <FileArrowDown size={40} />
+              <Image size={40} />
             </div>
             <div className='py-6 leading-relaxed'>
               <strong className='text-2x'>Wallpapers exclusivos</strong>
@@ -137,7 +142,7 @@ console.log(data)
               </p>
             </div>
             <div className='h-full p-6 flex items-center'>
-              <Image size={24} color='#81D8F7' />
+              <CaretRight size={24} color='#81D8F7' />
             </div>
           </a>
         </div>
