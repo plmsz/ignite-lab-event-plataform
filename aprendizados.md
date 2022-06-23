@@ -3,6 +3,11 @@ npm i tailwindcss postcss autoprefixer -D
 npx tailwindcss init -p
 npm i phosphor-react
 npm i date-fns
+npm i @vime/core @vime/react --force (incompatibilidade com react 18)
+// Default theme. ~960B
+import '@vime/core/themes/default.css';
+
+npm i react-router-dom
 
 # GraphCMS
 
@@ -98,9 +103,11 @@ Medidas são múltiplas de 4
 body {
   @apply bg-zinc-900 text-zinc-100;
 }
+```
 
-# theme-colors e font-family
+## theme-colors e font-family
 
+```
 theme: {
     extend: {
       fontFamily: {
@@ -117,23 +124,51 @@ theme: {
     },
 }
 }
-
-# Transforma svg em jsx
-https://svg2jsx.com/
 ```
 
-# flex-1
-Três valores: flex-grow | flex-shrink | flex-basis 
-~~~css
-.flex-1 {
-    flex: 1 1 0%;
+## leading-relaxed
+
+```css
+.leading-relaxed {
+  line-height: 1.625;
 }
-~~~
+```
+
+## flex-1
+
+Três valores: flex-grow | flex-shrink | flex-basis
+
+```css
+.flex-1 {
+  flex: 1 1 0%;
+}
+```
 
 # font smoothing
- Smooth the font on the level of the pixel, as opposed to the subpixel. Switching from subpixel rendering to antialiasing for light text on dark backgrounds makes it look lighter.
+
+Smooth the font on the level of the pixel, as opposed to the subpixel. Switching from subpixel rendering to antialiasing for light text on dark backgrounds makes it look lighter.
 `--webkit-font-smoothing: antialiased`
 
+# Aspect Ratio
+The CSS property aspect-ratio lets you create boxes that maintain proportional dimensions where the height and width of a box are calculated automatically as a ratio.
+.aspect-video {
+aspect-ratio: 16 / 9;
+}
+
+---
 # Data
- const isLessonAvailable = isPast(props.availableAt)
-   const availableDateFormatted = format(props.availableAt, "EEEE' • 'd' de 'MMMM' • 'k'h'mm", {locale: ptBR})
+
+const isLessonAvailable = isPast(props.availableAt)
+const availableDateFormatted = format(props.availableAt, "EEEE' • 'd' de 'MMMM' • 'k'h'mm", {locale: ptBR})
+
+
+# Transforma svg em jsx
+
+https://svg2jsx.com/
+---
+
+# Desafio
+- Criar componente de botão
+- Responsividade
+- Carregar automaticamente a primeira aula quando estiver no / evento ou clique aqui para exibir a primeira aula
+- Tela de loading
