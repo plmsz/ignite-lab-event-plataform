@@ -1,6 +1,7 @@
 npm create vite@latest
 npm i tailwindcss postcss autoprefixer -D
 npx tailwindcss init -p
+npm i phosphor-react
 
 # GraphCMS
 
@@ -28,20 +29,6 @@ query MyQuery {
       name
     }
   }
-}
-```
-
-# Tailwind
-
-## Global css
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  @apply bg-zinc-900 text-zinc-100;
 }
 ```
 
@@ -93,7 +80,55 @@ const GET_LESSONS_QUERY = gql`
   }
 `;
 
-
 const { data } = useQuery<{ lessons: Lesson[] }>(GET_LESSONS_QUERY);
-      
 ```
+
+# Tailwind
+
+Medidas são múltiplas de 4
+
+## Global css
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-zinc-900 text-zinc-100;
+}
+
+# theme-colors e font-family
+
+theme: {
+    extend: {
+      fontFamily: {
+        sans: 'Roboto, san-serif',
+      },
+      colors: {
+      colors: {
+        green: {
+          300: '#00B37E',
+          500: '#00875F',
+          700: '#015F43',
+        }
+      },
+    },
+}
+}
+
+# Transforma svg em jsx
+https://svg2jsx.com/
+```
+
+# flex-1
+Três valores: flex-grow | flex-shrink | flex-basis 
+~~~css
+.flex-1 {
+    flex: 1 1 0%;
+}
+~~~
+
+# font smoothing
+ Smooth the font on the level of the pixel, as opposed to the subpixel. Switching from subpixel rendering to antialiasing for light text on dark backgrounds makes it look lighter.
+`--webkit-font-smoothing: antialiased`
