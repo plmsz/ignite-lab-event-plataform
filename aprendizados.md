@@ -8,6 +8,7 @@ npm i @vime/core @vime/react --force (incompatibilidade com react 18)
 import '@vime/core/themes/default.css';
 
 npm i react-router-dom
+npm i classname
 
 # GraphCMS
 
@@ -89,6 +90,49 @@ const GET_LESSONS_QUERY = gql`
 const { data } = useQuery<{ lessons: Lesson[] }>(GET_LESSONS_QUERY);
 ```
 
+# Buscando dados com parâmetros
+
+```ts
+import { gql, useQuery } from '@apollo/client';
+
+const GET_LESSONS_BY_SLUG_QUERY = gql`
+  query GetLessonBySlug($slug: String) {
+    lesson(where: { slug: $slug }) {
+      description
+      title
+      videoId
+      teacher {
+        avatarURL
+        bio
+        name
+      }
+    }
+  }
+`;
+interface GetLessonBySlugResponse {
+  lesson: {
+    description: string;
+    title: string;
+    videoId: string;
+    teacher: {
+      avatarURL: string;
+      bio: string;
+      name: string;
+    };
+  };
+}
+
+interface VideoProps {
+  lessonSlug: string;
+}
+
+const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSONS_BY_SLUG_QUERY, {
+  variables: {
+    slug: props.lessonSlug,
+  },
+});
+```
+
 # Tailwind
 
 Medidas são múltiplas de 4
@@ -150,25 +194,63 @@ Smooth the font on the level of the pixel, as opposed to the subpixel. Switching
 `--webkit-font-smoothing: antialiased`
 
 # Aspect Ratio
+
 The CSS property aspect-ratio lets you create boxes that maintain proportional dimensions where the height and width of a box are calculated automatically as a ratio.
 .aspect-video {
 aspect-ratio: 16 / 9;
 }
 
 ---
+
 # Data
 
 const isLessonAvailable = isPast(props.availableAt)
 const availableDateFormatted = format(props.availableAt, "EEEE' • 'd' de 'MMMM' • 'k'h'mm", {locale: ptBR})
 
-
 # Transforma svg em jsx
 
-https://svg2jsx.com/
+## https://svg2jsx.com/
+
+# Background
+
+```
+theme: {
+    extend: {
+      backgroundImage: {
+        blur: 'url(/scr/assets/images/bg.png)'
+    }
+  }
+}
+
+ <div className='min-h-screen bg-blur bg-cover bg-no-repeat'> </div>
+```
+
 ---
 
+**Cadastra dados, alterar e deletar => Fazer no backend**
+
+---
+
+# Classes condicionais com a lib classNameS
+
+```tsx
+className={classNames(
+  'border border-gray-500 p-4 rounded group-hover:border-green-500',
+          {
+            'bg-green-500': isActiveLesson,
+          }
+        )}
+```
+
 # Desafio
+
 - Criar componente de botão
 - Responsividade
 - Carregar automaticamente a primeira aula quando estiver no / evento ou clique aqui para exibir a primeira aula
 - Tela de loading
+
+Futuro:
+Criar login
+auth
+Admin criar aulas e professores, excluir aulas e professores
+ir para ultimo aula vista

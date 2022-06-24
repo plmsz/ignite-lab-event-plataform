@@ -5,8 +5,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        blur: 'url(/src/assets/blur-background.png)',
+        // mockup: 'url(/src/assets/code-mockup.png)',
+      },
       fontFamily: {
-        sans: 'Roboto, san-serif',
+        sans: 'Roboto, sans-serif',
       },
       colors: {
         green: {
@@ -15,7 +19,7 @@ module.exports = {
           700: '#015F43',
         },
         blue: {
-          500: '#81D8F7',      
+          500: '#81D8F7',
         },
         orange: {
           500: '#FBA94C',
