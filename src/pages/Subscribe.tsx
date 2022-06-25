@@ -6,6 +6,16 @@ import IconLoading from '../components/IconLoading';
 import { useCreateSubscriberMutation } from '../graphql/generated';
 import { Logo } from './../components/Logo';
 import ReactIcon from '../assets/react-icon.svg';
+import { gql, useQuery } from '@apollo/client';
+
+const GET_FIRST_LESSONS_QUERY = gql`
+  query GetFirstLesson {
+    lessons(first: 1) {
+      id
+      slug
+    }
+  }
+`;
 
 export function Subscribe() {
   const navigate = useNavigate();
@@ -13,6 +23,8 @@ export function Subscribe() {
   const [email, setEmail] = useState('');
 
   const [createSubscriber, { loading }] = useCreateSubscriberMutation();
+  const { data } = useQuery(GET_FIRST_LESSONS_QUERY);
+  const firstLesson = data?.lessons[0]?.slug;
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -24,7 +36,7 @@ export function Subscribe() {
       },
     });
 
-    navigate('/event');
+    navigate(`/event/lesson/${firstLesson}`);
   };
 
   return (

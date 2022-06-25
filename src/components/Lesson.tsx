@@ -40,7 +40,8 @@ export function Lesson(props: LessonProps) {
               !isActiveLesson,
             'bg-green-500 group-focus:border-green-500':
               isActiveLesson && isLessonAvailable,
-            'group-hover:border-orange-500 cursor-not-allowed': !isLessonAvailable,
+            'group-hover:border-orange-500 cursor-not-allowed':
+              !isLessonAvailable,
           })}
         >
           <header className='flex justify-between items-center'>

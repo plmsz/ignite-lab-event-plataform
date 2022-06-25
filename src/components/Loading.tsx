@@ -1,5 +1,3 @@
-import { Circle, CircleNotch, CirclesFour } from 'phosphor-react';
-
 export function Loading() {
   return (
     <div className='flex flex-1 text-center justify-center py-40'>
