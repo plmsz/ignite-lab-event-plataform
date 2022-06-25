@@ -24,7 +24,7 @@ export function Lesson(props: LessonProps) {
 
   return (
     <Link
-      to={`/event/lesson/${props.slug}`}
+      to={`${isLessonAvailable ? `/event/lesson/${props.slug}` : '#'}`}
       className='flex flex-col font-medium group'
     >
       <span className='text-gray-300 mb-2'>{availableDateFormatted}</span>
@@ -33,15 +33,15 @@ export function Lesson(props: LessonProps) {
           className={classNames({
             'arrow-left': isActiveLesson,
           })}
-        /> 
+        />
         <div
-          className={classNames(
-            'p-4 rounded w-full',
-            {
-              'group-hover:border-green-500 border border-gray-500 ': !isActiveLesson,
-              'bg-green-500 group-focus:border-green-500': isActiveLesson,
-            }
-          )}
+          className={classNames('p-4 rounded w-full', {
+            'group-hover:border-green-500 border border-gray-500 ':
+              !isActiveLesson,
+            'bg-green-500 group-focus:border-green-500':
+              isActiveLesson && isLessonAvailable,
+            'group-hover:border-orange-500 cursor-not-allowed': !isLessonAvailable,
+          })}
         >
           <header className='flex justify-between items-center'>
             {isLessonAvailable ? (
