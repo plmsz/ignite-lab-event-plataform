@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import mockup from '../assets/code-mockup.png';
 import { Footer } from '../components/Footer';
-import Loading from '../components/Loading';
+import IconLoading from '../components/IconLoading';
 import { useCreateSubscriberMutation } from '../graphql/generated';
 import { Logo } from './../components/Logo';
 import ReactIcon from '../assets/react-icon.svg';
@@ -70,12 +70,12 @@ export function Subscribe() {
                 disabled={loading}
                 className='bg-green-500 rounded mt-4 py-4 uppercase text-sm font-bold hover:bg-green-700 transition-colors disabled:opacity-50 flex justify-center items-center gap-1'
               >
-                {loading ? <Loading /> : null} Garantir minha vaga
+                {loading ? <IconLoading /> : null} Garantir minha vaga
               </button>
             </form>
           </div>
         </div>
-        <img src={ReactIcon} alt="" className='absolute top-1' />
+        <img src={ReactIcon} alt='' className='absolute top-1' />
         <img src={mockup} alt='' className='mt-10' />
       </div>
       <Footer />

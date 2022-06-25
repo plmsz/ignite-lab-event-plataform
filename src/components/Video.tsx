@@ -8,6 +8,7 @@ import {
   Lightning,
 } from 'phosphor-react';
 import { useGetLessonBySlugQuery } from './../graphql/generated';
+import { Loading } from './Loading';
 
 interface VideoProps {
   lessonSlug: string;
@@ -21,11 +22,7 @@ export function Video(props: VideoProps) {
   });
 
   if (!data || !data.lesson) {
-    return (
-      <div className='flex-1'>
-        <h1>Carregando...</h1>
-      </div>
-    );
+    return <Loading />;
   }
   return (
     <div className='flex-1'>
