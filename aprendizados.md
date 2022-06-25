@@ -10,6 +10,8 @@ import '@vime/core/themes/default.css';
 npm i react-router-dom
 npm i classname
 
+npm install @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/typescript-react-apollo -D
+
 # GraphCMS
 
 query = buscar dados
@@ -132,6 +134,81 @@ const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSONS_BY_SLUG_QUERY, {
   },
 });
 ```
+
+# Alterando um dado
+
+```ts
+import { gql, useMutation } from '@apollo/client';
+
+const CREATE_SUBSCRIBE_MUTATION = gql`
+  mutation CreateSubscriber($name: String!, $email: String!) {
+    createSubscriber(data: { name: $name, email: $email }) {
+      id
+    }
+  }
+`;
+export function Subscribe() {
+  const navigate = useNavigate();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const [createSubscriber, { loading }] = useMutation(
+    CREATE_SUBSCRIBE_MUTATION
+  );
+
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+
+    await createSubscriber({
+      variables: {
+        name,
+        email,
+      },
+    });
+
+    navigate('/event');
+  };
+```
+
+# Code-gen
+
+- Cria pasta graphql/mutation e graphql/queries
+- adiciona as queries e mutations em arquivos
+- cria um arquivo codegen.yml
+- adciona a URI
+
+Agora é só chamar o hook
+import { useGetLessonBySlugQuery } from './../graphql/generated';
+
+interface VideoProps {
+  lessonSlug: string;
+}
+
+export function Video(props: VideoProps) {
+  const { data } = useGetLessonBySlugQuery({
+    variables: {
+      slug: props.lessonSlug,
+    },
+  });
+
+
+```yml
+schema: URI
+documents: './src/graphql/**/*.graphql'
+generates:
+  ./src/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      reactApolloVersion: 3
+      withHooks: true
+      withHOC: false
+      withComponents: false
+```
+Adciona no package.json e executa
+ "codegen": "graphql-codegen"
 
 # Tailwind
 

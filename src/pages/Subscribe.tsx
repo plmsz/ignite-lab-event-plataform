@@ -1,26 +1,16 @@
-import { gql, useMutation } from '@apollo/client';
-import { Spinner } from 'phosphor-react';
 import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import mockup from '../assets/code-mockup.png';
 import Loading from '../components/Loading';
+import { useCreateSubscriberMutation } from '../graphql/generated';
 import { Logo } from './../components/Logo';
 
-const CREATE_SUBSCRIBE_MUTATION = gql`
-  mutation CreateSubscriber($name: String!, $email: String!) {
-    createSubscriber(data: { name: $name, email: $email }) {
-      id
-    }
-  }
-`;
 export function Subscribe() {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  const [createSubscriber, { loading }] = useMutation(
-    CREATE_SUBSCRIBE_MUTATION
-  );
+  const [createSubscriber, { loading }] = useCreateSubscriberMutation();
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -74,7 +64,7 @@ export function Subscribe() {
               disabled={loading}
               className='bg-green-500 rounded mt-4 py-4 uppercase text-sm font-bold hover:bg-green-700 transition-colors disabled:opacity-50 flex justify-center items-center gap-1'
             >
-            {loading ? <Loading/> : null} Garantir minha vaga
+              {loading ? <Loading /> : null} Garantir minha vaga
             </button>
           </form>
         </div>
