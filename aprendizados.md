@@ -320,15 +320,14 @@ className={classNames(
 ```
 
 # Desafio
-
 - Criar componente de botão
 - Responsividade
 - Carregar automaticamente a primeira aula quando estiver no / evento ou clique aqui para exibir a primeira aula
 - Tela de loading
-- Não permitir pessoas que não estão inscritas a entra na parte de evento: inscrição de github - token no localstorage (login)
+- Login - Não permitir pessoas que não estão inscritas a entra na parte de evento: inscrição de github - token no localstorage
 
 Futuro:
-- Admin criar aulas e professores, excluir aulas e professores
-- ir para ultimo aula vista
 - implementar validações no form, 
 - adicionar um avatar do usuário logado, no header, trazendo do github a imagem dele
+- ir para ultimo aula vista
+- Admin criar aulas e professores, excluir aulas e professores
