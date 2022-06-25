@@ -28,47 +28,54 @@ export function Lesson(props: LessonProps) {
       className='flex flex-col font-medium group'
     >
       <span className='text-gray-300 mb-2'>{availableDateFormatted}</span>
-
-      <div
-        className={classNames(
-          'border border-gray-500 p-4 rounded group-hover:border-green-500',
-          {
-            'bg-green-500': isActiveLesson,
-          }
-        )}
-      >
-        <header className='flex justify-between items-center'>
-          {isLessonAvailable ? (
-            <span
-              className={classNames(
-                'text-sm font-medium flex items-center gap-2',
-                {
-                  'text-white': isActiveLesson,
-                  'text-blue-500 ': !isActiveLesson,
-                }
-              )}
-            >
-              <CheckCircle size={20} />
-              Conteúdo liberado
-            </span>
-          ) : (
-            <span className='text-sm text-orange-500 font-medium flex items-center gap-2'>
-              <Lock size={20} />
-              Em breve
-            </span>
-          )}
-          <span className='text-xs text-white border border-green-300 px-2 py-0.5 rounded'>
-            {props.type === 'live' ? 'AO VIVO' : 'AULA PRÁTICA'}
-          </span>
-        </header>
-        <strong
-          className={classNames('block mt-5', {
-            'text-white': isActiveLesson,
-            'text-gray-200 ': !isActiveLesson,
+      <div className='flex items-center'>
+        <div
+          className={classNames({
+            'arrow-left': isActiveLesson,
           })}
+        /> 
+        <div
+          className={classNames(
+            'p-4 rounded w-full',
+            {
+              'group-hover:border-green-500 border border-gray-500 ': !isActiveLesson,
+              'bg-green-500 group-focus:border-green-500': isActiveLesson,
+            }
+          )}
         >
-          {props.title}
-        </strong>
+          <header className='flex justify-between items-center'>
+            {isLessonAvailable ? (
+              <span
+                className={classNames(
+                  'text-sm font-medium flex items-center gap-2',
+                  {
+                    'text-white': isActiveLesson,
+                    'text-blue-500 ': !isActiveLesson,
+                  }
+                )}
+              >
+                <CheckCircle size={20} />
+                Conteúdo liberado
+              </span>
+            ) : (
+              <span className='text-sm text-orange-500 font-medium flex items-center gap-2'>
+                <Lock size={20} />
+                Em breve
+              </span>
+            )}
+            <span className='text-xs text-white border border-green-300 px-2 py-0.5 rounded'>
+              {props.type === 'live' ? 'AO VIVO' : 'AULA PRÁTICA'}
+            </span>
+          </header>
+          <strong
+            className={classNames('block mt-5', {
+              'text-white': isActiveLesson,
+              'text-gray-200 ': !isActiveLesson,
+            })}
+          >
+            {props.title}
+          </strong>
+        </div>
       </div>
     </Link>
   );
