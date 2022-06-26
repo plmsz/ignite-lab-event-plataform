@@ -83,8 +83,8 @@ Tecnologias que utilizei para desenvolver esta aplicação:
 <div align="center">
 <img style="border-radius: 50% ;" src="https://github.com/plmsz.png" width="100px;" alt=""/>
 </div>
-</br>
 <div align="center">
+</br>
 
 [![LinkedIn](https://img.shields.io/static/v1?label=&message=LinkedIn&color=blue&style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/plmsz/)
 [![Email](https://img.shields.io/static/v1?label=&message=Email&color=red&style=flat-square&logo=Gmail&logoColor=white)](mailto:plmsouzaoliveira@gmail.com)
