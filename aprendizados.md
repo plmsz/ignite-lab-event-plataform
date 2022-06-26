@@ -320,14 +320,13 @@ className={classNames(
 ```
 
 # Desafio
-- Responsividade
 - Mudar as cores
 
 ---
 Ideias:
 - Criar componente de botão
 - Login - Não permitir pessoas que não estão inscritas a entra na parte de evento: inscrição de github - token no localstorage
-- implementar validações no form, 
+- implementar mais validações no form e feedback, 
 - adicionar um avatar do usuário logado, no header, trazendo do github a imagem dele
 - ir para ultimo aula vista
 - Admin criar aulas e professores, excluir aulas e professores
