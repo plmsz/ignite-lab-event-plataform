@@ -40,7 +40,7 @@ export function Subscribe() {
         <div className='flex md:flex-row flex-col w-full max-w-[1100px] items-center md:justify-between mt-10 md:mt-20'>
           <div className='max-w-[640px] flex flex-col items-center px-6 mb-6 md:items-start'>
             <Logo width='208' />
-            <h1 className='mt-8 text-[2.5rem] leading-tight text-gray-100'>
+            <h1 className='mt-8 text-2xl md:text-[2.5rem] leading-tight text-gray-100 text-center md:text-left'>
               Construa uma{' '}
               <strong className='text-blue-500'>aplicação completa</strong>, do
               zero, com
