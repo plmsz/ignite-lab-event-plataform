@@ -35,12 +35,12 @@ export function Video(props: VideoProps) {
         </div>
       </div>
       <div className='p-8 max-w-[1100px] mx-auto'>
-        <div className='flex items-start gap-16'>
+        <div className='flex flex-col items-center gap-6 lg:flex-row lg:items-start lg:gap-16'>
           <div className='flex-1'>
-            <h1 className='font-bold text-2xl text-gray-100 mb-4'>
+            <h1 className='font-bold text-[1.125rem] md:text-2xl text-gray-100 mb-4'>
               {data.lesson.title}
             </h1>
-            <p className='text-gray-200 leading-relaxed'>
+            <p className='text-gray-200 text-sm md:text-base leading-relaxed'>
               {data.lesson.description}
             </p>
             {data.lesson.teacher && (
@@ -51,7 +51,7 @@ export function Video(props: VideoProps) {
                   className='border-2 border-blue-500 rounded-full w-16 h-16'
                 />
                 <div className='leading-relaxed'>
-                  <strong className='text-2xl text-gray-100 block'>
+                  <strong className='text-[1.125rem] md:text-2xl text-gray-100 block'>
                     {data.lesson.teacher.name}
                   </strong>
                   <span className='text-sm text-gray-300 block'>
@@ -64,7 +64,7 @@ export function Video(props: VideoProps) {
           <div>
             <a
               href='https://discord.com/invite/rocketseat'
-              target="_blank"
+              target='_blank'
               className='bg-green-500 rounded flex items-center justify-center gap-2 px-3 py-4 w-[236px] uppercase text-sm font-bold mb-4 hover:bg-green-700 transition-colors'
             >
               <DiscordLogo size={24} />
@@ -78,13 +78,13 @@ export function Video(props: VideoProps) {
             </a>
           </div>
         </div>
-        <div className='flex gap-8 mt-20 grid grid-cols-2'>
+        <div className='flex justify-center gap-8 mt-20 grid lg:grid-cols-2'>
           <a
             href='https://efficient-sloth-d85.notion.site/Material-complementar-86d4ef35af16471ebc3ae3eba1a378e5'
-            target="_blank"
-            className='flex items-center bg-gray-700 rounded overflow-hidden flex items-strech gap-6 hover:bg-gray-600 transition-colors'
+            target='_blank'
+            className='flex bg-gray-700 rounded overflow-hidden items-stretch gap-3 hover:bg-gray-600 transition-colors lg:gap-6'
           >
-            <div className='bg-green-500 h-full p-6 flex items-center'>
+            <div className='bg-green-500 h-full p-5 flex items-center'>
               <FileArrowDown size={40} />
             </div>
             <div className='py-6 leading-relaxed'>
@@ -94,16 +94,16 @@ export function Video(props: VideoProps) {
                 desenvolvimento
               </p>
             </div>
-            <div className='h-full p-6 flex items-center'>
+            <div className='h-full p-4 flex items-center lg:p-6'>
               <CaretRight size={24} color='#81D8F7' />
             </div>
           </a>
           <a
             href='https://drive.google.com/drive/folders/1mxWnvlqmH7MbVRv2Na9xFNgCQCygM1iR'
-            target="_blank"
-            className='flex items-center bg-gray-700 rounded overflow-hidden flex items-strech gap-6 hover:bg-gray-600 transition-colors'
+            target='_blank'
+            className='flex bg-gray-700 rounded overflow-hidden items-strech gap-3 hover:bg-gray-600 transition-colors lg:gap-6'
           >
-            <div className='bg-green-500 h-full p-6 flex items-center'>
+            <div className='bg-green-500 h-full p-5 flex items-center'>
               <Image size={40} />
             </div>
             <div className='py-6 leading-relaxed'>
@@ -113,7 +113,7 @@ export function Video(props: VideoProps) {
                 máquina
               </p>
             </div>
-            <div className='h-full p-6 flex items-center'>
+            <div className='h-full p-4 flex items-center lg:p-6'>
               <CaretRight size={24} color='#81D8F7' />
             </div>
           </a>

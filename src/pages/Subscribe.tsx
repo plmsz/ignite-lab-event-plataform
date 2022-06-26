@@ -29,17 +29,16 @@ export function Subscribe() {
 
     if (data) {
       navigate(`/event/lesson/${firstLesson}`);
-    }else{
-      navigate(`/event/`)
+    } else {
+      navigate(`/event/`);
     }
-
   };
 
   return (
     <>
       <div className='min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center'>
-        <div className='flex w-full max-w-[1100px] items-center justify-between mx-auto mt-20'>
-          <div className='max-w-[640px]'>
+        <div className='flex md:flex-row flex-col w-full max-w-[1100px] items-center md:justify-between md:mx-auto mt-10 md:mt-20'>
+          <div className='max-w-[640px] flex flex-col items-center px-6 mb-6'>
             <Logo width='208' />
             <h1 className='mt-8 text-[2.5rem] leading-tight text-gray-100'>
               Construa uma{' '}
