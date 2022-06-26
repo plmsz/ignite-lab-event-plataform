@@ -70,7 +70,7 @@ Tecnologias que utilizei para desenvolver esta aplicação:
 </br>
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/static/v1?label=&message=LinkedIn&color=green&style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/plmsz/)
+[![LinkedIn](https://img.shields.io/static/v1?label=&message=LinkedIn&color=blue&style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/plmsz/)
 [![Email](https://img.shields.io/static/v1?label=&message=Email&color=red&style=flat-square&logo=Gmail&logoColor=white)](mailto:plmsouzaoliveira@gmail.com)
 [![Twitter Badge](https://img.shields.io/static/v1?label=&message=Twitter&color=1ca0f1&style=flat-square&logo=Twitter&logoColor=white)](https://twitter.com/plmszdev)
 </span>
