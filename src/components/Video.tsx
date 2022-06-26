@@ -48,7 +48,7 @@ export function Video(props: VideoProps) {
                 <img
                   src={data.lesson.teacher.avatarURL}
                   alt=''
-                  className='border-2 border-blue-500 rounded-full w-16 h-16'
+                  className='border-2 border-green-500 rounded-full w-16 h-16'
                 />
                 <div className='leading-relaxed'>
                   <strong className='text-[1.125rem] md:text-2xl text-gray-100 block'>
@@ -65,14 +65,14 @@ export function Video(props: VideoProps) {
             <a
               href='https://discord.com/invite/rocketseat'
               target='_blank'
-              className='bg-green-500 rounded flex items-center justify-center gap-2 px-3 py-4 w-[236px] uppercase text-sm font-bold mb-4 hover:bg-green-700 transition-colors'
+              className='bg-pink-500 rounded flex items-center justify-center gap-2 px-3 py-4 w-[236px] uppercase text-sm font-bold mb-4 hover:bg-pink-700 transition-colors'
             >
               <DiscordLogo size={24} />
               Comunidade no discord
             </a>
             <a
               href='#'
-              className='border border-blue-500 text-blue-500 rounded flex items-center justify-center gap-2 px-3 py-4 w-[236px] uppercase font-bold text-sm hover:bg-blue-500 hover:text-gray-900 transition-colors'
+              className='border border-green-500 text-green-500 rounded flex items-center justify-center gap-2 px-3 py-4 w-[236px] uppercase font-bold text-sm hover:bg-green-500 hover:text-gray-900 transition-colors'
             >
               <Lightning size={24} /> Acesse o desafio
             </a>
@@ -84,7 +84,7 @@ export function Video(props: VideoProps) {
             target='_blank'
             className='flex bg-gray-700 rounded overflow-hidden items-stretch gap-3 hover:bg-gray-600 transition-colors lg:gap-6'
           >
-            <div className='bg-green-500 h-full p-5 flex items-center'>
+            <div className='bg-pink-500 h-full p-5 flex items-center'>
               <FileArrowDown size={40} />
             </div>
             <div className='py-6 leading-relaxed'>
@@ -103,7 +103,7 @@ export function Video(props: VideoProps) {
             target='_blank'
             className='flex bg-gray-700 rounded overflow-hidden items-strech gap-3 hover:bg-gray-600 transition-colors lg:gap-6'
           >
-            <div className='bg-green-500 h-full p-5 flex items-center'>
+            <div className='bg-pink-500 h-full p-5 flex items-center'>
               <Image size={40} />
             </div>
             <div className='py-6 leading-relaxed'>

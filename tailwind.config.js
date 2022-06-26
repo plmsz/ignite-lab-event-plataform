@@ -12,13 +12,13 @@ module.exports = {
         sans: 'Roboto, sans-serif',
       },
       colors: {
-        green: {
-          300: '#00B37E',
-          500: '#00875F',
-          700: '#015F43',
+        pink: {
+          300: '#BF4C6B',
+          500: '#B3123D',
+          700: '#7F0D2B',
         },
-        blue: {
-          500: '#81D8F7',
+        green: {
+          500: '#73DEC0',
         },
         orange: {
           500: '#FBA94C',

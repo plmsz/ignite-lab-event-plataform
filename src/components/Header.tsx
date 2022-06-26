@@ -7,10 +7,8 @@ interface HeaderProps {
   isOpen: boolean;
 }
 export function Header({ setIsOpen, isOpen }: HeaderProps) {
-
-  
   return (
-    <header className='w-full py-5 flex items-center px-6 justify-between bg-gray-700 border-b border-gray-600 text-blue-500'>
+    <header className='w-full py-5 flex items-center px-6 justify-between bg-gray-700 border-b border-gray-600 text-green-500'>
       <Logo width={window.innerWidth < 1024 ? '167' : '237'} />
       <div className='flex items-center gap-2 md:hidden'>
         <span className='text-sm text-gray-100'>Aulas</span>

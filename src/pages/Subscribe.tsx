@@ -42,9 +42,9 @@ export function Subscribe() {
             <Logo width='208' />
             <h1 className='mt-8 text-2xl md:text-[2.5rem] leading-tight text-gray-100 text-center md:text-left'>
               Construa uma{' '}
-              <strong className='text-blue-500'>aplicação completa</strong>, do
+              <strong className='text-green-500'>aplicação completa</strong>, do
               zero, com
-              <strong className='text-blue-500'> React JS</strong>
+              <strong className='text-green-500'> React JS</strong>
             </h1>
             <p className='text-gray-200 leading-relaxed mt-7'>
               Em apenas uma semana você vai dominar na prática uma das
@@ -65,19 +65,19 @@ export function Subscribe() {
                 type='text'
                 required
                 placeholder='Seu nome completo'
-                className='bg-transparent rounded bg-gray-900 px-5  h-14 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-green-300 focus:ring-green-300'
+                className='bg-transparent rounded bg-gray-900 px-5  h-14 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-pink-300 focus:ring-pink-300'
               />
               <input
                 onChange={(event) => setEmail(event.target.value)}
                 type='email'
                 required
                 placeholder='Digite seu email'
-                className='bg-transparent rounded bg-gray-900 px-5 h-14 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-green-300 focus:ring-green-300'
+                className='bg-transparent rounded bg-gray-900 px-5 h-14 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-pink-300 focus:ring-pink-300'
               />
               <button
                 type='submit'
                 disabled={loading}
-                className='bg-green-500 rounded mt-4 py-4 uppercase text-sm font-bold hover:bg-green-700 transition-colors disabled:opacity-50 flex justify-center items-center gap-1'
+                className='bg-pink-500 rounded mt-4 py-4 uppercase text-sm font-bold hover:bg-pink-700 transition-colors disabled:opacity-50 flex justify-center items-center gap-1'
               >
                 {loading ? <IconLoading /> : null} Garantir minha vaga
               </button>

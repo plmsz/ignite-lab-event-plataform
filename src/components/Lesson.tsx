@@ -36,9 +36,9 @@ export function Lesson(props: LessonProps) {
         />
         <div
           className={classNames('p-4 rounded w-full', {
-            'group-hover:border-green-500 border border-gray-500 ':
+            'group-hover:border-pink-500 border border-gray-500 ':
               !isActiveLesson,
-            'bg-green-500 group-focus:border-green-500':
+            'bg-pink-500 group-focus:border-pink-500':
               isActiveLesson && isLessonAvailable,
             'group-hover:border-orange-500 cursor-not-allowed':
               !isLessonAvailable,
@@ -51,7 +51,7 @@ export function Lesson(props: LessonProps) {
                   'text-sm font-medium flex items-center gap-2',
                   {
                     'text-white': isActiveLesson,
-                    'text-blue-500 ': !isActiveLesson,
+                    'text-green-500 ': !isActiveLesson,
                   }
                 )}
               >
@@ -64,7 +64,7 @@ export function Lesson(props: LessonProps) {
                 Em breve
               </span>
             )}
-            <span className='text-xs text-white border border-green-300 px-2 py-0.5 rounded'>
+            <span className='text-xs text-white border border-pink-300 px-2 py-0.5 rounded'>
               {props.type === 'live' ? 'AO VIVO' : 'AULA PRÁTICA'}
             </span>
           </header>
